@@ -219,10 +219,11 @@ class CsvParser(
             allBytes
         }
 
-        // Validate UTF-8 on a sample
-        val sampleSize = minOf(rawBytes.size, 4096)
-        val sample = rawBytes.copyOfRange(0, sampleSize)
-        val charset = if (isValidUtf8(sample)) {
+        // Validate UTF-8 on the whole file. A fixed-size sample can end in the middle of a
+        // multi-byte character, which made valid UTF-8 look invalid and turned every umlaut
+        // and every CJK character into mojibake. The file is already in memory, so checking
+        // all of it costs nothing extra.
+        val charset = if (isValidUtf8(rawBytes)) {
             Charsets.UTF_8
         } else {
             logger.warn("File does not appear to be valid UTF-8, using ISO-8859-1")

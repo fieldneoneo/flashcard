@@ -267,4 +267,22 @@ class CsvParserTest {
         assertEquals("Q1", result.validCards[0].question)
         assertEquals("A1", result.validCards[0].answer)
     }
+
+    @Test
+    fun `UTF-8 stays UTF-8 when a multi-byte character straddles byte 4096`() {
+        // 16 header bytes + 4078 + 1 comma = 4095 ASCII bytes, so the three bytes of the first
+        // Chinese character sit at offsets 4095..4097. Encoding detection used to look at the
+        // first 4096 bytes only, saw a cut-off character and fell back to ISO-8859-1.
+        val csv = "question,answer\n" + "Q".repeat(4078) + ",意思 schön\nGröße,大小\n"
+        val bytes = csv.toByteArray(Charsets.UTF_8)
+        assertEquals(0xE6.toByte(), bytes[4095])
+
+        val result = parser.parse(ByteArrayInputStream(bytes))
+
+        assertEquals(2, result.validCards.size)
+        assertEquals("意思 schön", result.validCards[0].answer)
+        assertEquals("Größe", result.validCards[1].question)
+        assertEquals("大小", result.validCards[1].answer)
+        assertTrue(result.errors.isEmpty())
+    }
 }

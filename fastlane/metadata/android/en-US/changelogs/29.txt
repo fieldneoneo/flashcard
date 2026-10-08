@@ -1,0 +1,5 @@
+## 🐛 Fixes
+
+- 🐛 CSV files with umlauts or Chinese text no longer turn into garbled characters on import. The encoding check looked at the first 4096 bytes only, and a character cut in half at that boundary made a valid UTF-8 file look like something else
+
+**Full Changelog**: https://github.com/fieldneoneo/flashcard/compare/v2.11.1...v2.11.2
