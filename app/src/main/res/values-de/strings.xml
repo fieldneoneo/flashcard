@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CardPop</string>
+    <string name="app_name">Flashcard</string>
     
     <!-- Welcome Flow Strings - German (meaning-first, not literal) -->
     <!-- Introduction Step -->
@@ -104,7 +104,7 @@
     <string name="welcome_permissions_button_skip">Überspringen</string>
 
     <string name="welcome_usage_title">App-Blockliste 🔍</string>
-    <string name="welcome_usage_description">Ermöglicht CardPop zu erkennen, welche App im Vordergrund ist, und Lernkarten-Popups zu unterdrücken, während bestimmte Apps geöffnet sind – ideal beim Spielen, in Videokonferenzen oder bei Präsentationen.</string>
+    <string name="welcome_usage_description">Ermöglicht Flashcard zu erkennen, welche App im Vordergrund ist, und Lernkarten-Popups zu unterdrücken, während bestimmte Apps geöffnet sind – ideal beim Spielen, in Videokonferenzen oder bei Präsentationen.</string>
     <string name="welcome_usage_optional">Optional – du kannst dies später in Einstellungen → App-Blockliste aktivieren.</string>
     <string name="welcome_usage_granted">Nutzungszugriff erteilt! ✅</string>
     <string name="welcome_usage_required">Nutzungszugriff nicht erteilt 🔍</string>

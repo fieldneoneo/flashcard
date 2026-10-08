@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CardPop</string>
+    <string name="app_name">Flashcard</string>
     
     <!-- Welcome Flow Strings -->
     <!-- Introduction Step -->
@@ -107,7 +107,7 @@
 
     <!-- Usage access step (optional) -->
     <string name="welcome_usage_title">App Blocklist Access 🔍</string>
-    <string name="welcome_usage_description">Lets CardPop detect which app is in the foreground so it can suppress flashcard popups while specific apps are open — great for gaming, video calls, or presentations.</string>
+    <string name="welcome_usage_description">Lets Flashcard detect which app is in the foreground so it can suppress flashcard popups while specific apps are open — great for gaming, video calls, or presentations.</string>
     <string name="welcome_usage_optional">Optional — you can enable this later in Settings → App Blocklist.</string>
     <string name="welcome_usage_granted">Usage access granted! ✅</string>
     <string name="welcome_usage_required">Usage access not granted 🔍</string>

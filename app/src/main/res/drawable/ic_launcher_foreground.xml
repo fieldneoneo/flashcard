@@ -1,66 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A white flashcard with an "Ä" and a black-red-gold bar. Everything sits inside the
+     66dp safe zone of the 108dp canvas. scripts/make_icon.py draws the same shapes for
+     the raster fallbacks. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
-    android:viewportWidth="512"
-    android:viewportHeight="512">
-
-    <!--
-      Card stack centered at (256,256), scaled to 0.85 so rotated corners
-      stay inside the round-launcher safe zone.
-    -->
-    <group
-        android:translateX="256"
-        android:translateY="256"
-        android:scaleX="0.85"
-        android:scaleY="0.85">
-
-        <!-- Back card: tilted left -->
-        <group
-            android:translateY="15"
-            android:rotation="-14"
-            android:alpha="0.55">
-            <path
-                android:fillColor="#e0f2f1"
-                android:pathData="M-122,-95 L122,-95 A18,18 0 0 1 140,-77 L140,77 A18,18 0 0 1 122,95 L-122,95 A18,18 0 0 1 -140,77 L-140,-77 A18,18 0 0 1 -122,-95 Z"/>
-        </group>
-
-        <!-- Middle card: tilted right -->
-        <group
-            android:translateY="2"
-            android:rotation="7"
-            android:alpha="0.75">
-            <path
-                android:fillColor="#b2dfdb"
-                android:pathData="M-122,-95 L122,-95 A18,18 0 0 1 140,-77 L140,77 A18,18 0 0 1 122,95 L-122,95 A18,18 0 0 1 -140,77 L-140,-77 A18,18 0 0 1 -122,-95 Z"/>
-        </group>
-
-        <!-- Front card: straight, popped upward -->
-        <group android:translateY="-18">
-            <path
-                android:fillColor="#ffffff"
-                android:pathData="M-122,-95 L122,-95 A18,18 0 0 1 140,-77 L140,77 A18,18 0 0 1 122,95 L-122,95 A18,18 0 0 1 -140,77 L-140,-77 A18,18 0 0 1 -122,-95 Z"/>
-
-            <!-- 汉 character (NotoSansCJK Bold, font-size 120, baseline y=38, centered) -->
-            <path
-                android:fillColor="#1565c0"
-                android:fillAlpha="0.92"
-                android:pathData="M-49.8,-51.28C-42.12,-47.68 -32.16,-41.8 -27.6,-37.48L-19.68,-49.12C-24.72,-53.32 -34.8,-58.72 -42.36,-61.84ZM-55.8,-18.76C-48.12,-15.28 -37.68,-9.64 -32.88,-5.44L-25.44,-17.44C-30.72,-21.4 -41.16,-26.68 -48.84,-29.68ZM-52.68,37.64L-41.16,47.36C-34.08,35.72 -26.64,21.92 -20.28,9.32L-30.24,-0.28C-37.32,13.64 -46.44,28.64 -52.68,37.64ZM-16.56,-56.32L-16.56,-42.64L-6.72,-42.64L-13.08,-41.32C-8.04,-19.36 -0.96,-0.4 9.36,14.96C-0.12,24.8 -11.64,31.88 -24.72,36.44C-21.72,39.2 -18.36,44.72 -16.56,48.44C-3.24,43.16 8.28,35.96 18.0,26.24C26.16,35.36 35.88,42.68 47.76,48.2C49.8,44.72 54.12,39.08 57.24,36.32C45.48,31.4 35.64,24.2 27.6,15.08C39.84,-1.6 48.0,-23.92 51.72,-53.92L42.6,-56.92L40.32,-56.32ZM0.6,-42.64L36.36,-42.64C33.0,-24.16 27.0,-8.92 18.72,3.32C10.32,-9.76 4.44,-25.48 0.6,-42.64Z"/>
-
-            <!-- Pop-cue dots -->
-            <path
-                android:fillColor="#1a9e8f"
-                android:fillAlpha="0.5"
-                android:pathData="M-25,72 A5,5 0 1 0 -15,72 A5,5 0 1 0 -25,72 Z"/>
-            <path
-                android:fillColor="#1a9e8f"
-                android:fillAlpha="0.7"
-                android:pathData="M-5,72 A5,5 0 1 0 5,72 A5,5 0 1 0 -5,72 Z"/>
-            <path
-                android:fillColor="#1a9e8f"
-                android:fillAlpha="0.5"
-                android:pathData="M15,72 A5,5 0 1 0 25,72 A5,5 0 1 0 15,72 Z"/>
-        </group>
-
-    </group>
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M37,30h34a5,5 0,0 1,5 5v38a5,5 0,0 1,-5 5h-34a5,5 0,0 1,-5 -5v-38a5,5 0,0 1,5 -5z" />
+    <!-- A: two legs and the crossbar -->
+    <path
+        android:fillColor="#16202B"
+        android:pathData="M51,43h6l-10,23h-6z" />
+    <path
+        android:fillColor="#16202B"
+        android:pathData="M51,43h6l10,23h-6z" />
+    <path
+        android:fillColor="#16202B"
+        android:pathData="M46,56h16v4.5h-16z" />
+    <!-- umlaut dots -->
+    <path
+        android:fillColor="#16202B"
+        android:pathData="M45.8,37.5a2.7,2.7 0,1 0,5.4 0a2.7,2.7 0,1 0,-5.4 0z" />
+    <path
+        android:fillColor="#16202B"
+        android:pathData="M56.8,37.5a2.7,2.7 0,1 0,5.4 0a2.7,2.7 0,1 0,-5.4 0z" />
+    <!-- black-red-gold bar -->
+    <path
+        android:fillColor="#16202B"
+        android:pathData="M38,70h32v2h-32z" />
+    <path
+        android:fillColor="#DD0000"
+        android:pathData="M38,72h32v2h-32z" />
+    <path
+        android:fillColor="#FFCE00"
+        android:pathData="M38,74h32v2h-32z" />
 </vector>

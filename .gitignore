@@ -17,3 +17,4 @@
 local.properties
 .qwen
 .idea/vcs.xml
+__pycache__/
