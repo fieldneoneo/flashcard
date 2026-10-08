@@ -1,0 +1,9 @@
+## ✨ New Features
+
+- 📥 **Share to import** — other apps can now hand a CSV or TSV file to the app through the Android share sheet or "Open with". The file opens directly in the import preview, where you pick the category and confirm
+
+## 🔧 Changes
+
+- 📦 This fork now has its own application id (`com.fieldneoneo.flashcard`), so it installs next to the upstream CardPop app instead of replacing it. To bring your cards over, make a backup in CardPop and restore it here
+
+**Full Changelog**: https://github.com/fieldneoneo/flashcard/compare/85e7529...v2.11.0

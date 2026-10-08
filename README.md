@@ -41,7 +41,7 @@ CardPop helps you learn **passively** while using your phone. Flashcards will ap
 - 🎉 Completely free, no ads, no tracking
 
 ### Added in this fork
-- 📥 **Share to import** — other apps can hand a CSV or TSV file to CardPop through the Android share sheet or "Open with". The file opens directly in the import preview, where you pick the category and confirm. A header row of `Front,Back,Category` (or the other column names the importer already recognises) maps the columns automatically. This is on the `share-import` branch and not in a published release yet.
+- 📥 **Share to import** — other apps can hand a CSV or TSV file to CardPop through the Android share sheet or "Open with". The file opens directly in the import preview, where you pick the category and confirm. A header row of `Front,Back,Category` (or the other column names the importer already recognises) maps the columns automatically. Available from v2.11.0.
 
 ### Added in CardPop (by Craeckie)
 - 🧠 **FSRS v6 spaced repetition** — cards are scheduled using [FSRS](https://github.com/open-spaced-repetition/fsrs4anki), the algorithm that powers the newest Anki scheduler. Intervals adapt to your performance, with configurable target retention (80–95 %, default 90 %).
@@ -62,7 +62,7 @@ CardPop helps you learn **passively** while using your phone. Flashcards will ap
 
 ---
 ## Building
-Every push runs the unit tests and Android lint in GitHub Actions (`.github/workflows/ci.yml`). The release workflow (`.github/workflows/release.yml`) builds and signs an APK when a version tag is pushed or when it is started by hand; it needs the repository secrets `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS` and `KEY_PASSWORD`. No release of this fork has been published yet. For released builds of the upstream apps, see [CardPop](https://github.com/Craeckie/CardPop/releases) and [FloFla Cards](https://github.com/flofladev/floflacards/releases).
+Every push runs the unit tests and Android lint in GitHub Actions (`.github/workflows/ci.yml`). The release workflow (`.github/workflows/release.yml`) builds and signs an APK when a version tag is pushed or when it is started by hand; it needs the repository secrets `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS` and `KEY_PASSWORD`. Signed builds of this fork are on its [Releases](https://github.com/fieldneoneo/flashcard/releases) page. The fork uses its own application id (`com.fieldneoneo.flashcard`), so it installs next to the upstream CardPop app rather than replacing it; move your cards over with a backup in one app and a restore in the other. For released builds of the upstream apps, see [CardPop](https://github.com/Craeckie/CardPop/releases) and [FloFla Cards](https://github.com/flofladev/floflacards/releases).
 
 ## License
 This project is licensed under the GNU General Public License v3.0, the same as CardPop and FloFla Cards. See [LICENSE](LICENSE).

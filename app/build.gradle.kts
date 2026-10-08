@@ -12,11 +12,13 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.cardpop.app"
+        // Own application id so this fork installs next to the upstream CardPop app.
+        // The namespace (and with it every package name in the code) stays com.cardpop.app.
+        applicationId = "com.fieldneoneo.flashcard"
         minSdk = 24
         targetSdk = 36
-        versionCode = 26
-        versionName = (project.findProperty("versionName") as String?) ?: "2.10.0"
+        versionCode = 27
+        versionName = (project.findProperty("versionName") as String?) ?: "2.11.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
