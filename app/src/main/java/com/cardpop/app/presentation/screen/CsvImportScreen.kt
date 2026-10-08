@@ -61,6 +61,8 @@ import com.cardpop.app.util.resolveDisplayName
 @Composable
 fun CsvImportScreen(
     onNavigateBack: () -> Unit,
+    sharedFileUri: Uri? = null,
+    onSharedFileConsumed: () -> Unit = {},
     viewModel: CsvImportViewModel = hiltViewModel(),
     categoryViewModel: CategoryViewModel = hiltViewModel()
 ) {
@@ -89,6 +91,17 @@ fun CsvImportScreen(
             selectedFileUri = it
             selectedFileName = resolveDisplayName(context.contentResolver, it)
             viewModel.setFile(it, selectedFileName!!, context.contentResolver)
+        }
+    }
+
+    // A file handed over by another app takes the same path as one chosen in the picker
+    LaunchedEffect(sharedFileUri) {
+        sharedFileUri?.let {
+            val name = resolveDisplayName(context.contentResolver, it)
+            selectedFileUri = it
+            selectedFileName = name
+            viewModel.setFile(it, name, context.contentResolver)
+            onSharedFileConsumed()
         }
     }
 

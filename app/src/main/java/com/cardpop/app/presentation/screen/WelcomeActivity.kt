@@ -20,6 +20,7 @@ package com.cardpop.app.presentation.screen
 import android.Manifest
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -170,8 +171,24 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     private fun navigateToMainApp() {
-        startActivity(Intent(this, MainActivity::class.java))
+        val mainIntent = Intent(this, MainActivity::class.java)
+        // A file handed over by another app (share sheet or "open with") is passed on together
+        // with the temporary read grant, so the import screen can open it.
+        sharedFileUri()?.let { uri ->
+            mainIntent.action = MainActivity.ACTION_IMPORT_SHARED_FILE
+            mainIntent.data = uri
+            mainIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        }
+        startActivity(mainIntent)
         finish()
+    }
+
+    /** The file this activity was started with by another app, or null for a normal launch. */
+    @Suppress("DEPRECATION")
+    private fun sharedFileUri(): Uri? = when (intent?.action) {
+        Intent.ACTION_SEND -> intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+        Intent.ACTION_VIEW -> intent.data
+        else -> null
     }
 
     private fun updateSystemBars(isDarkTheme: Boolean) {

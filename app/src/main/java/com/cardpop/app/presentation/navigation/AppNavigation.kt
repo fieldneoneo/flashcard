@@ -17,7 +17,13 @@
 
 package com.cardpop.app.presentation.navigation
 
+import android.net.Uri
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -45,8 +51,15 @@ import com.cardpop.app.data.entity.FlashcardEntity
 @Composable
 fun AppNavigation(
     navController: NavHostController,
-    onRequestOverlayPermission: () -> Unit
+    onRequestOverlayPermission: () -> Unit,
+    sharedImportUri: Uri? = null
 ) {
+    // A file shared into the app opens the import screen once; the screen clears it after use.
+    var pendingSharedImport by remember { mutableStateOf(sharedImportUri) }
+    LaunchedEffect(Unit) {
+        if (pendingSharedImport != null) navController.navigate("csv-import")
+    }
+
     NavHost(
         navController = navController,
         startDestination = "main"
@@ -129,7 +142,9 @@ FlashcardManagementScreen(
         // CSV Import/Export routes
         composable("csv-import") {
             CsvImportScreen(
-                onNavigateBack = { navController.popBackStack() }
+                onNavigateBack = { navController.popBackStack() },
+                sharedFileUri = pendingSharedImport,
+                onSharedFileConsumed = { pendingSharedImport = null }
             )
         }
         composable(

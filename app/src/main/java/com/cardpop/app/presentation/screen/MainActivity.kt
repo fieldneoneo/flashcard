@@ -17,6 +17,7 @@
 
 package com.cardpop.app.presentation.screen
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.compose.setContent
@@ -45,6 +46,11 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var settingsManager: SettingsRepository
+
+    companion object {
+        /** Internal action: open the import screen with the file in the intent's data. */
+        const val ACTION_IMPORT_SHARED_FILE = "com.cardpop.app.action.IMPORT_SHARED_FILE"
+    }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         MorningReminderScheduler.schedule(this)
+
+        // File passed on by WelcomeActivity (share sheet / "open with"). Only on a fresh start:
+        // after a configuration change the import screen's ViewModel already holds it.
+        val sharedImportUri: Uri? =
+            if (savedInstanceState == null && intent?.action == ACTION_IMPORT_SHARED_FILE) intent.data else null
         
         setContent {
             // Observe theme preference from SettingsRepository
@@ -81,7 +92,8 @@ class MainActivity : AppCompatActivity() {
                 // Use extracted navigation component
                 AppNavigation(
                     navController = navController,
-                    onRequestOverlayPermission = { permissionHandler.requestOverlayPermission() }
+                    onRequestOverlayPermission = { permissionHandler.requestOverlayPermission() },
+                    sharedImportUri = sharedImportUri
                 )
             }
         }
