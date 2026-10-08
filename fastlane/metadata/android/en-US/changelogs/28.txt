@@ -1,0 +1,6 @@
+## 🔧 Changes
+
+- 🏷️ The app is now called **Flashcard**
+- 🎨 New launcher icon: a flashcard with an "Ä" and a black-red-gold bar, for learning German
+
+**Full Changelog**: https://github.com/fieldneoneo/flashcard/compare/v2.11.0...v2.11.1

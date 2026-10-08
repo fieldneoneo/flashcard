@@ -1,23 +1,23 @@
 <h1 align="center">
   <a href="https://github.com/fieldneoneo/flashcard">
-    <img alt="CardPop" src="fastlane/metadata/android/en-US/images/icon.png" width="180" />
+    <img alt="Flashcard" src="fastlane/metadata/android/en-US/images/icon.png" width="180" />
   </a>
   <br>
-  CardPop
+  Flashcard
 </h1>
 
 <h3 align="center">Passive learning with your phone! 📱</h3>
 
 > **This repository is a personal fork of [CardPop](https://github.com/Craeckie/CardPop) by [Craeckie](https://github.com/Craeckie), which is itself a fork of [FloFla Cards](https://github.com/flofladev/floflacards) by [flofladev](https://github.com/flofladev).**  
-> The original idea and base implementation are flofladev's. FSRS scheduling, Anki and Pleco import and the other features listed under "Added in CardPop" are Craeckie's work. This fork adds the items under "Added in this fork". The app is still called CardPop.
+> The original idea and base implementation are flofladev's. FSRS scheduling, Anki and Pleco import and the other features listed under "Added in CardPop" are Craeckie's work. This fork adds the items under "Added in this fork". The app was renamed from CardPop to Flashcard in v2.11.1 and has its own icon.
 
-**中文简介**：这是 CardPop 的个人分支。CardPop 会在你用手机时把卡片悬浮显示在其他应用上方，利用碎片时间背词。这个分支在它的基础上增加了“接收分享的 CSV 文件并直接进入导入预览”，方便把别处整理好的生词一步送进来。原始创意和基础实现来自 flofladev，FSRS 排程、Anki 导入等功能来自 Craeckie。
+**中文简介**：Flashcard 是 CardPop 的个人分支，主要用来学德语。它会在你用手机时把卡片悬浮显示在其他应用上方，利用碎片时间背词。这个分支在它的基础上增加了“接收分享的 CSV 文件并直接进入导入预览”，方便把别处整理好的生词一步送进来。原始创意和基础实现来自 flofladev，FSRS 排程、Anki 导入等功能来自 Craeckie。
 
-## What is CardPop?
+## What is Flashcard?
 
-CardPop helps you learn **passively** while using your phone. Flashcards will appear on top of other apps at intervals you choose – so you can memorize words, formulas, or definitions while scrolling, chatting, or browsing.No extra effort. Just daily learning in the background.
+Flashcard helps you learn **passively** while using your phone. Flashcards will appear on top of other apps at intervals you choose – so you can memorize words, formulas, or definitions while scrolling, chatting, or browsing.No extra effort. Just daily learning in the background.
 
-### With CardPop, you can: 
+### With Flashcard, you can: 
 - Learn new words daily while scrolling social media 
 - Revise definitions before a test 
 - Practice foreign languages without opening a book 
@@ -28,9 +28,9 @@ CardPop helps you learn **passively** while using your phone. Flashcards will ap
 - Language learners who want to expand vocabulary 
 - Anyone who wants tolearn on the go
 
-### Why CardPop? 
-- Unlike other flashcard apps, CardPop **doesn’t** require you to open it every time. It gently reminds you of what you want to learn while you’re already using your phone. Simple,effective, and distraction-free.📌 
-- Privacy first: CardPop works fully offline. We do notcollect, store, or share any personal data. No ads, no analytics, no hidden costs – just learning. Start learning passively today and turn your screen time into studytime! 🚀
+### Why Flashcard? 
+- Unlike other flashcard apps, Flashcard **doesn’t** require you to open it every time. It gently reminds you of what you want to learn while you’re already using your phone. Simple,effective, and distraction-free.📌 
+- Privacy first: Flashcard works fully offline. We do notcollect, store, or share any personal data. No ads, no analytics, no hidden costs – just learning. Start learning passively today and turn your screen time into studytime! 🚀
 
 ## Features
 - 📂 Create your own categories and flashcards
@@ -41,7 +41,7 @@ CardPop helps you learn **passively** while using your phone. Flashcards will ap
 - 🎉 Completely free, no ads, no tracking
 
 ### Added in this fork
-- 📥 **Share to import** — other apps can hand a CSV or TSV file to CardPop through the Android share sheet or "Open with". The file opens directly in the import preview, where you pick the category and confirm. A header row of `Front,Back,Category` (or the other column names the importer already recognises) maps the columns automatically. Available from v2.11.0.
+- 📥 **Share to import** — other apps can hand a CSV or TSV file to Flashcard through the Android share sheet or "Open with". The file opens directly in the import preview, where you pick the category and confirm. A header row of `Front,Back,Category` (or the other column names the importer already recognises) maps the columns automatically. Available from v2.11.0.
 
 ### Added in CardPop (by Craeckie)
 - 🧠 **FSRS v6 spaced repetition** — cards are scheduled using [FSRS](https://github.com/open-spaced-repetition/fsrs4anki), the algorithm that powers the newest Anki scheduler. Intervals adapt to your performance, with configurable target retention (80–95 %, default 90 %).

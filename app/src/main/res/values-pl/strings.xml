@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CardPop</string>
+    <string name="app_name">Flashcard</string>
     
     <!-- Welcome Flow Strings - Polish (meaning-first, not literal) -->
     <!-- Introduction Step -->
@@ -104,7 +104,7 @@
     <string name="welcome_permissions_button_skip">Pomiń</string>
 
     <string name="welcome_usage_title">Dostęp do listy blokowanych 🔍</string>
-    <string name="welcome_usage_description">Pozwala CardPop wykrywać, która aplikacja jest na pierwszym planie i ukrywać popupy z fiszkami, gdy określone aplikacje są otwarte — idealne do gier, rozmów wideo czy prezentacji.</string>
+    <string name="welcome_usage_description">Pozwala Flashcard wykrywać, która aplikacja jest na pierwszym planie i ukrywać popupy z fiszkami, gdy określone aplikacje są otwarte — idealne do gier, rozmów wideo czy prezentacji.</string>
     <string name="welcome_usage_optional">Opcjonalne — możesz to włączyć później w Ustawienia → Lista blokowanych.</string>
     <string name="welcome_usage_granted">Dostęp do użycia przyznany! ✅</string>
     <string name="welcome_usage_required">Dostęp do użycia nieprzyznany 🔍</string>
